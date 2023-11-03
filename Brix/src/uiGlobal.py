@@ -41,7 +41,7 @@ VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
 
-VERSION_STR = "v2.1.0"
+VERSION_STR = "v2.2.0"
 
 repository_owner = "vinaynmcci"
 repository_name = "swupdate"
@@ -66,7 +66,7 @@ def check_version():
 
         if latest_version:
             if latest_version > VERSION_STR:
-                notification = wx.adv.NotificationMessage("MCCI Cricket UI", "Updated Software ({latest_version}) is available. Do you want to install it now please visit Below Link", parent=frame)
+                notification = wx.adv.NotificationMessage("MCCI Cricket UI", "Updated Software ({latest_version}) is available. Do you want to install it now please visit Below Link")
                 notification.Show(timeout=10)  # Duration the notification should be displayed, in seconds
                 
             else:
