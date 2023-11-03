@@ -7,7 +7,6 @@
 import wx
 import os
 import requests
-import wx.adv
 
 
 
@@ -41,7 +40,7 @@ VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
 
-VERSION_STR = "v2.3.0"
+VERSION_STR = "v3.0.0"
 
 repository_owner = "vinaynmcci"
 repository_name = "swupdate"
@@ -64,13 +63,23 @@ def check_version():
         release_info = response.json()
         latest_version = release_info['tag_name']
 
+        app = wx.App(False)
+        dlg = wx.Dialog(None, title="AutoUpdate Notification")
+        update_info = wx.StaticText(dlg, label="You are using the latest version.", style=wx.ALIGN_CENTER)
+
         if latest_version:
             if latest_version > VERSION_STR:
-                notification = wx.adv.NotificationMessage("MCCI Cricket UI", "Updated Software ({latest_version}) is available. Do you want to install it now please visit Below Link")
-                notification.Show(timeout=10)  # Duration the notification should be displayed, in seconds
-                
+                update_info.SetLabel(f"Updated software is available for MCCI Cricket UI ({latest_version}). Do you want to install it now")
+                dlg.SetSize(300, 150)
+                dlg.ShowModal()
+                dlg.Destroy()
             else:
-                pass  # No action for the latest version
+                pass
+                # update_info.SetLabel("You are using the latest version.")
+                # dlg.SetSize(300, 150)
+                # dlg.ShowModal()
+                # dlg.Destroy()
+
     else:
         print(f"Failed to retrieve information from GitHub. Status code: {response.status_code}")
 
