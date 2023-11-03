@@ -7,6 +7,7 @@
 import wx
 import os
 import requests
+from plyer import notification
 
 
 
@@ -40,7 +41,7 @@ VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
 
-VERSION_STR = "v1.7.0"
+VERSION_STR = "v1.8.0"
 
 repository_owner = "vinaynmcci"
 repository_name = "swupdate"
@@ -65,22 +66,13 @@ def check_version():
 
         if latest_version:
             if latest_version > VERSION_STR:
-                toaster = ToastNotifier()
-                toaster.show_toast(
-                    "MCCI Cricket UI Notification",
-                    f"A new version ({latest_version}) is available!",
-                    icon_path=None,
-                    duration=10
+                notification.notify(
+                    title="MCCI Cricket UI ",
+                    message=f"Updated Software ({latest_version}) is available. Do you want to install it now please visit Below Link",
+                    timeout=10  # Duration the notification should be displayed, in seconds
                 )
             else:
-                pass
-                # toaster = ToastNotifier()
-                # toaster.show_toast(
-                #     "MCCI Cricket UI Notification",
-                #     "You are using the latest version.",
-                #     icon_path=None,
-                #     duration=10
-                # )
+                pass  # No action for the latest version
     else:
         print(f"Failed to retrieve information from GitHub. Status code: {response.status_code}")
 
