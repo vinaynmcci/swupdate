@@ -40,7 +40,7 @@ VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
 
-VERSION_STR = "v1.0.0"
+VERSION_STR = "v1.1.0"
 
 repository_owner = "vinaynmcci"
 repository_name = "swupdate"
@@ -55,7 +55,7 @@ repository_name = "swupdate"
 # latest_version = "1.0.0"  # Modify the latest_version variable accordingly
 
 def check_version():
-    api_url = f"https://api.github.com/repos/{repository_owner}/{repository_name}/releases/latest"
+    api_url = f"https://api.github.com/repos/vinaynmcci/swupdate/releases/latest"
     response = requests.get(api_url)
 
     if response.status_code == 200:
