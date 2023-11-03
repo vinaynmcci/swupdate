@@ -7,7 +7,7 @@
 import wx
 import os
 import requests
-from plyer import notification
+import wx.adv
 
 
 
@@ -41,7 +41,7 @@ VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
 
-VERSION_STR = "v1.9.0"
+VERSION_STR = "v2.0.0"
 
 repository_owner = "vinaynmcci"
 repository_name = "swupdate"
@@ -66,11 +66,9 @@ def check_version():
 
         if latest_version:
             if latest_version > VERSION_STR:
-                notification.notify(
-                    title="MCCI Cricket UI ",
-                    message=f"Updated Software ({latest_version}) is available. Do you want to install it now please visit Below Link",
-                    timeout=10  # Duration the notification should be displayed, in seconds
-                )
+                notification = wx.adv.NotificationMessage("MCCI Cricket UI", "Updated Software ({latest_version}) is available. Do you want to install it now please visit Below Link", parent=frame)
+                notification.Show(timeout=10)  # Duration the notification should be displayed, in seconds
+                
             else:
                 pass  # No action for the latest version
     else:
