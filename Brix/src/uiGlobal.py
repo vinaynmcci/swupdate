@@ -40,7 +40,7 @@ VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
 
-VERSION_STR = "v1.3.0"
+VERSION_STR = "v1.4.0"
 
 repository_owner = "vinaynmcci"
 repository_name = "swupdate"
@@ -82,7 +82,7 @@ def check_version():
 
 # if __name__ == "__main__":
 
-check_version()
+
 
 
 
@@ -119,6 +119,9 @@ class NumericValidator(wx.Validator):
         elif (chr(key).isdigit() or chr(key) == "."):
             evt.Skip()
             return
+    
+    
+    check_version()
 
 
         
