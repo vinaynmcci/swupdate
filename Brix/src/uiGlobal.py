@@ -40,7 +40,7 @@ VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
 
-VERSION_STR = "v4.1.0"
+VERSION_STR = "v4.2.0"
 
 repository_owner = "vinaynmcci"
 repository_name = "swupdate"
@@ -61,21 +61,27 @@ def check_version():
     
     if response.status_code == 200:
         release_info = response.json()
-        latest_version = release_info['tag_name']
-
-        app = wx.App(False)
-        dlg = wx.Dialog(None, title="AutoUpdate Notification")
-        update_info = wx.StaticText(dlg, label="You are using the latest version.", style=wx.ALIGN_CENTER)
+        latest_version = release_info["tag_name"]
 
         if latest_version:
             if latest_version > VERSION_STR:
-                update_info.SetLabel(f"Updated software is available for MCCI Cricket UI ({latest_version}). Do you want to install it now")
-                dlg.SetSize(300, 150)
-                dlg.ShowModal()
+                app = wx.App(False)
+                dlg = wx.MessageDialog(
+                    None,
+                    f"Updated software is available for MCCI Cricket UI ({latest_version}). Do you want to install it now?",
+                    "AutoUpdate Notification",
+                    style=wx.YES_NO | wx.ICON_INFORMATION,
+                )
+                result = dlg.ShowModal()
+                if result == wx.ID_YES:
+                    # Call your update function here
+                    pass
                 dlg.Destroy()
             else:
-                pass
-                
+                app = wx.App(False)
+                dlg = wx.MessageDialog(None, "You are using the latest version.", "AutoUpdate Notification", wx.OK | wx.ICON_INFORMATION)
+                dlg.ShowModal()
+                dlg.Destroy()
 
     else:
         print(f"Failed to retrieve information from GitHub. Status code: {response.status_code}")
