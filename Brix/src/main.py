@@ -5,6 +5,8 @@ import os
 # Own modules
 import uiMainApp
 
+# import uiGlobal
+
 __author__ = 'Seenivasan V'
 __contact__ = 'seenivasanv@mcci.com'
 __credits__ = ['Terry Moore', 'Velmurugan Selvaraj']
@@ -34,7 +36,10 @@ def main ():
     base = os.path.dirname(base)
 
     # Run the application
+    
     uiMainApp.run()
+    # uiGlobal.check_version()
+    
 
 # python program to use
 # main for function call.

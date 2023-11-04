@@ -10,6 +10,7 @@ import wx.adv
 import requests
 
 from uiGlobal import * 
+# import uiGlobal
 import os
 import sys
 
@@ -617,7 +618,14 @@ class TestPanel(wx.Frame):
             return
 
 class UiApp(wx.App):
-    def OnInit (self):
+    def OnInit(self):
+        # Call check_version here
+        # check_version()
+
+        # Initialize the frame
+        # self.frame = TestPanel(parent=None, title="MCCI - Cricket UI")
+        # self.locale = wx.Locale(wx.LANGUAGE_ENGLISH)
+        
         return True
     
     def CustInit(self):

@@ -40,7 +40,7 @@ VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
 
-VERSION_STR = "v4.3.0"
+VERSION_STR = "v4.4.0"
 
 repository_owner = "vinaynmcci"
 repository_name = "swupdate"
@@ -78,10 +78,11 @@ def check_version():
                     pass
                 dlg.Destroy()
             else:
-                app = wx.App(False)
-                dlg = wx.MessageDialog(None, "You are using the latest version.", "AutoUpdate Notification", wx.OK | wx.ICON_INFORMATION)
-                dlg.ShowModal()
-                dlg.Destroy()
+                pass
+                # app = wx.App(False)
+                # dlg = wx.MessageDialog(None, "You are using the latest version.", "AutoUpdate Notification", wx.OK | wx.ICON_INFORMATION)
+                # dlg.ShowModal()
+                # dlg.Destroy()
 
     else:
         print(f"Failed to retrieve information from GitHub. Status code: {response.status_code}")
