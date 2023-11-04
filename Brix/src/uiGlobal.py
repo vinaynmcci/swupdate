@@ -40,7 +40,7 @@ VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
 
-VERSION_STR = "v3.2.0"
+VERSION_STR = "v4.0.0"
 
 repository_owner = "vinaynmcci"
 repository_name = "swupdate"
@@ -75,10 +75,7 @@ def check_version():
                 dlg.Destroy()
             else:
                 pass
-                # update_info.SetLabel("You are using the latest version.")
-                # dlg.SetSize(300, 150)
-                # dlg.ShowModal()
-                # dlg.Destroy()
+                
 
     else:
         print(f"Failed to retrieve information from GitHub. Status code: {response.status_code}")
