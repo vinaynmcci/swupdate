@@ -41,7 +41,7 @@ VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
 
-VERSION_STR = "v4.7.0"
+VERSION_STR = "v4.8.0"
 
 repository_owner = "vinaynmcci"
 repository_name = "swupdate"
@@ -74,16 +74,18 @@ def check_version():
                     style=wx.YES_NO | wx.ICON_INFORMATION,
                 )
                 result = dlg.ShowModal()
-                if result == wx.YES_NO:
-                    # Call your update function here
+                if result == wx.ID_YES:
                     webbrowser.open(f"https://github.com/mcci-usb/COLLECTION-cricket-ui/releases/tag/v4.0.0")
                 dlg.Destroy()
             else:
                 pass
                 # app = wx.App(False)
                 # dlg = wx.MessageDialog(None, "You are using the latest version.", "AutoUpdate Notification", wx.OK | wx.ICON_INFORMATION)
-                # dlg.ShowModal()
+                # result = dlg.ShowModal()
+                # if result == wx.ID_OK:
+                #     webbrowser.open(f"https://github.com/mcci-usb/COLLECTION-cricket-ui/releases/tag/v4.0.0")
                 # dlg.Destroy()
+                
 
     else:
         print(f"Failed to retrieve information from GitHub. Status code: {response.status_code}")
