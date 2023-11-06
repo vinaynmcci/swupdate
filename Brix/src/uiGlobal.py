@@ -41,7 +41,7 @@ VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
 
-VERSION_STR = "v5.8.0"
+VERSION_STR = "v6.0.0"
 
 repository_owner = "vinaynmcci"
 repository_name = "swupdate"
@@ -63,8 +63,8 @@ def check_version():
                 app = wx.App(False)
                 dlg = wx.MessageDialog(
                     None,
-                    f"MCCI Cricket UI New Version ({latest_version}) Released.",
-                    "AutoUpdate Notification",
+                    f"MCCI Cricket UI latest version ({latest_version}) is available \n" + "Please click on OK for more details",
+                    "MCCI Cricket UI ",
                     style=wx.OK | wx.CANCEL | wx.ICON_INFORMATION,
                 )
                 result = dlg.ShowModal()
@@ -78,23 +78,7 @@ def check_version():
                 dlg.Destroy()
             else:
                 pass
-                # app = wx.App(False)
                 
-                
-                # dlg = wx.MessageDialog(
-                #     None,
-                #     f"MCCI Cricket UI New Version ({latest_version}) is Released. Click OK for more details.",
-                #     "Update Notification",
-                #     style=wx.OK | wx.CANCEL | wx.ICON_INFORMATION,
-                # )
-                
-                # result = dlg.ShowModal()
-                # if result == wx.ID_OK:
-                #     webbrowser.open("https://github.com/mcci-usb/COLLECTION-cricket-ui/releases/tag/v4.0.0")
-                #     dlg.Destroy
-                # elif result == wx.NO:
-                #     pass
-                # dlg.Destroy()
                     
                 
     else:
