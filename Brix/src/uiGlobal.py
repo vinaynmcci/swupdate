@@ -7,6 +7,7 @@
 import wx
 import os
 import requests
+import webbrowser
 
 
 
@@ -40,7 +41,7 @@ VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
 
-VERSION_STR = "v4.5.0"
+VERSION_STR = "v4.6.0"
 
 repository_owner = "vinaynmcci"
 repository_name = "swupdate"
@@ -73,9 +74,9 @@ def check_version():
                     style=wx.YES_NO | wx.ICON_INFORMATION,
                 )
                 result = dlg.ShowModal()
-                if result == wx.ID_YES:
+                if result == wx.YES_NO:
                     # Call your update function here
-                    pass
+                    webbrowser.open(f"https://github.com/mcci-usb/COLLECTION-cricket-ui/releases/tag/v4.0.0")
                 dlg.Destroy()
             else:
                 pass
