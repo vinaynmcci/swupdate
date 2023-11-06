@@ -41,7 +41,7 @@ VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
 
-VERSION_STR = "v4.8.0"
+VERSION_STR = "v4.9.0"
 
 repository_owner = "vinaynmcci"
 repository_name = "swupdate"
