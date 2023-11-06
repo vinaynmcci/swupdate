@@ -41,7 +41,7 @@ VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
 
-VERSION_STR = "v4.9.0"
+VERSION_STR = "v5.0.0"
 
 repository_owner = "vinaynmcci"
 repository_name = "swupdate"
@@ -75,7 +75,10 @@ def check_version():
                 )
                 result = dlg.ShowModal()
                 if result == wx.ID_YES:
-                    webbrowser.open(f"https://github.com/mcci-usb/COLLECTION-cricket-ui/releases/tag/v4.0.0")
+                    webbrowser.open(f"https://github.com/vinaynmcci/swupdate/releases/tag/v4.8.0")
+                elif result == wx.ID_NO:
+                    # Implement action for clicking "No" here
+                    pass
                 dlg.Destroy()
             else:
                 pass
