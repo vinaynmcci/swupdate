@@ -41,7 +41,7 @@ VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
 
-VERSION_STR = "v6.1.0"
+VERSION_STR = "v6.2.0"
 
 repository_owner = "vinaynmcci"
 repository_name = "swupdate"
@@ -63,9 +63,9 @@ def check_version():
                 app = wx.App(False)
                 dlg = wx.MessageDialog(
                     None,
-                    f"MCCI Cricket UI latest version ({latest_version}) is available \n" + "Please click on OK for more details",
-                    "MCCI Cricket UI ",
-                    style=wx.OK | wx.CANCEL | wx.ICON_INFORMATION,
+                    f"MCCI Cricket UI latest version ({latest_version}) is availble in Github, Please click on OK for more details",
+                    "AutoUpdate Notification",
+                    style=wx.OK | wx.CANCEL ,
                 )
                 result = dlg.ShowModal()
                 if result == wx.ID_OK:
@@ -75,11 +75,10 @@ def check_version():
                 elif result == wx.ID_NO:
                     # Implement action for clicking "No" here
                     pass
-                dlg.Destroy()
+                    dlg.Destroy()
             else:
                 pass
-                
-                    
+               
                 
     else:
         print(f"Failed to retrieve information from GitHub. Status code: {response.status_code}")
