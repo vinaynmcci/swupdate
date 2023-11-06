@@ -41,7 +41,7 @@ VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
 
-VERSION_STR = "v5.3.0"
+VERSION_STR = "v5.4.0"
 
 repository_owner = "vinaynmcci"
 repository_name = "swupdate"
@@ -76,7 +76,7 @@ def check_version():
                 result = dlg.ShowModal()
                 if result == wx.ID_YES:
                     dlg.Destroy()
-                    app.MainLoop()
+                    
                     webbrowser.open(f"https://github.com/vinaynmcci/swupdate/releases/tag/v4.8.0")
                 elif result == wx.ID_NO:
                     # Implement action for clicking "No" here
