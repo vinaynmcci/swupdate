@@ -41,12 +41,19 @@ VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
 
-VERSION_STR = "v5.7.0"
+VERSION_STR = "v5.6.0"
 
 repository_owner = "vinaynmcci"
 repository_name = "swupdate"
 ###############################################################################
 
+# uiGlobals.py
+
+# import autoupdate  # Import the autoupdate module
+# import wx
+
+# VERSION_STR = "v1.0.0"
+# latest_version = "1.0.0"  # Modify the latest_version variable accordingly
 
 def check_version():
     
@@ -65,37 +72,29 @@ def check_version():
                     None,
                     f"MCCI Cricket UI New Version ({latest_version}) Released.",
                     "AutoUpdate Notification",
-                    style=wx.OK | wx.CANCEL | wx.ICON_INFORMATION,
+                    style=wx.YES_NO | wx.ICON_INFORMATION,
                 )
                 result = dlg.ShowModal()
-                if result == wx.ID_OK:
-                    webbrowser.open("https://github.com/mcci-usb/COLLECTION-cricket-ui/releases/tag/v4.0.0")
-                    dlg.Destroy()
+                if result == wx.ID_YES:
+                    pass
+                    dlg.Destroy
                     # 
                 elif result == wx.ID_NO:
                     # Implement action for clicking "No" here
                     pass
                 dlg.Destroy()
             else:
-                pass
-                # app = wx.App(False)
-                
-                
-                # dlg = wx.MessageDialog(
-                #     None,
-                #     f"MCCI Cricket UI New Version ({latest_version}) is Released. Click OK for more details.",
-                #     "Update Notification",
-                #     style=wx.OK | wx.CANCEL | wx.ICON_INFORMATION,
-                # )
-                
-                # result = dlg.ShowModal()
-                # if result == wx.ID_OK:
-                #     webbrowser.open("https://github.com/mcci-usb/COLLECTION-cricket-ui/releases/tag/v4.0.0")
-                #     dlg.Destroy
-                # elif result == wx.NO:
-                #     pass
-                # dlg.Destroy()
-                    
+                app = wx.App(False)
+                dlg = wx.MessageDialog(
+                    None,
+                    f"MCCI Cricket UI New Version ({latest_version}) is Released. Click [here]({mcci_web}) for more details.",
+                    "Update Notification",
+                    style=wx.YES_NO | wx.ICON_INFORMATION,
+                )
+                result = dlg.ShowModal()
+                if result == wx.ID_YES:
+                    pass
+                    dlg.Destroy
                 
     else:
         print(f"Failed to retrieve information from GitHub. Status code: {response.status_code}")
